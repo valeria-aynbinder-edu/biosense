@@ -106,3 +106,7 @@ if __name__ == "__main__":
     # rows = [header, line1, line2]
     # with open("./data/new_data/bla/bla/test.csv", "w") as fh:
     #     fh.writelines(rows)
+
+
+    # with open(relative_path, 'rb') as file_handler:
+    #     content = file_handler.read()

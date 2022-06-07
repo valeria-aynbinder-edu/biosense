@@ -3,12 +3,11 @@
 from oop.person import Person
 
 
-class BankAccount:
+class Account:
 
-    def __init__(self, account_num: int, account_owner: Person, limit=10000):
+    def __init__(self, account_num: int, limit=10000):
         print(f"Caaling __init__")
         self.account_num = account_num
-        self.owner: Person = account_owner
         self.limit = limit
 
         self.balance = 0
@@ -27,11 +26,35 @@ class BankAccount:
             print(f"Your new balance is {self.balance}")
 
 
+class Person:
+
+    def __init__(self, first_name, last_name, city, address, phone, email, age=None):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.city = city
+        self.address = address
+        self.phone = phone
+        self.email = email
+        self.age = age
+        self.accounts = []
+
+    def is_using_gmail(self):
+        return self.email.endswith("@gmail.com")
+
+    def add_account(self, account):
+        self.accounts.append(account)
+
+    def get_accounts_num(self):
+        return len(self.accounts)
+
+
 if __name__ == '__main__':
 
     person1 = Person('Moshe', 'Israeli', 'Tel-Aviv', 'Rotshild 45', '0545555555', 'moshe@gmail.com', 28)
-    account1 = BankAccount(12345, person1)
+    account1 = Account(12345)
+    account2 = Account(222222)
 
-    account1.deposit(100)
-    account1.withdraw(10000)
-    account1.withdraw(1000)
+    person1.add_account(account1)
+    person1.add_account(account2)
+
+    print(person1.get_accounts_num())

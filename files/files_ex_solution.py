@@ -23,4 +23,5 @@ def filter_csv(path):
     return ret_dict
 
 if __name__ == '__main__':
+    # print(filter_csv(os.path.join("data", "files_ex")))
     pprint.pprint(filter_csv(os.path.join("data", "files_ex")))
