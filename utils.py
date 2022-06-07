@@ -5,3 +5,4 @@ def is_leap_year(year):
 
 def foo(num):
     math.cos(num) * math.sin(num)
+
