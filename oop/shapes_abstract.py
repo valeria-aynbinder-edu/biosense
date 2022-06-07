@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 from math import sqrt
 
-print(f"__name__ value for imported script {__file__}: {__name__}")
 
 class Shape(ABC):
 
@@ -34,7 +33,16 @@ class Triangle(Shape):
 
     def area(self):
         s = sum(self.sides) / 2
-        return sqrt(s * (s-self.sides[0]) * (s-self.sides[1]) * (s))
+        return sqrt(s * (s-self.sides[0]) * (s-self.sides[1]) * (s-self.sides[2]))
 
-    def perimeter(self):
-        return sum(self.sides)
+    # def perimeter(self):
+    #     return sum(self.sides)
+
+
+if __name__ == '__main__':
+
+    t1 = Triangle(3,4,5)
+    print(f"{t1.area()}")
+
+    s = Shape()
+    print(s.area())
